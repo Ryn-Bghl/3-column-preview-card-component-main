@@ -1,0 +1,183 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    font-size: 1rem;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+:root {
+    /* LAYOUT */
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+
+    /* Primary Color */
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(180, 100%, 18%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+
+    /* Neutral Color */
+   
+
+    /* Font Family */
+    --ff-prime: "Lexend Deca", serif;
+    --ff-secondary: "Big Shoulders Display", serif;
+}
+
+* {
+  font-family: var(--ff-prime);
+  color: white;
+}
+
+h1 {
+  font-family: var(--ff-secondary);
+  font-size: 2.5rem;
+}
+
+p {
+  opacity: 0.75;
+  line-height: 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  gap: 2rem;
+}
+
+.sedans {
+  background-color: var(--bright-orange);
+}
+
+.sedans button { 
+  color: var(--bright-orange);
+}
+
+.suvs {
+  background-color: var(--dark-cyan);
+}
+
+.suvs button { 
+  color: var(--dark-cyan);
+}
+
+.luxury {
+  background-color: var(--very-dark-cyan);
+}
+
+.luxury button { 
+  color: var(--very-dark-cyan);
+}
+
+
+button {
+  cursor: pointer;
+  width: 65%;
+  border: none;
+  border-radius: 1.5rem;
+  background-color: white;
+  padding: 0.75rem 1.25rem;
+}
+
+@media screen and (min-width: 375px) {
+  main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    min-width: 55rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .container {
+    gap: 1rem;
+  }
+
+  p {
+    line-height: 1.5rem;
+   font-size: 0.9rem;
+  }
+
+  button {
+    margin-top: 3.5rem;
+  }
+
+  button:hover {
+    border: solid 2px white;
+    background-color: transparent;
+    color: white;
+  }
+}
